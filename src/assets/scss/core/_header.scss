@@ -1,0 +1,89 @@
+// css header
+
+header {
+  background-color: transparent;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  transition: 0.4s;
+  .container {
+    height: 100%;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    &__left {
+      display: flex;
+      .text {
+        @include text(--body14-fs, null, --body14-lh, transparent, null);
+        transition: 0.4s;
+      }
+    }
+    &__right {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        li {
+          display: flex;
+          align-items: center;
+          span {
+            color: #fff;
+          }
+          svg {
+            @include size(20px, 20px);
+            color: #fff;
+            @include pc() {
+              @include size(25px, 25px);
+            }
+          }
+        }
+      }
+    }
+    &__logo {
+      position: absolute;
+      top: 200px;
+      transform: translateX(-50%);
+      font-size: 8rem;
+      height: auto;
+      margin: 0 auto;
+      left: 50%;
+      transition: 0.4s cubic-bezier(0.8, 0.04, 0.34, 0.97);
+      color: $white-cl;
+      opacity: 0.7;
+      @include pc() {
+        font-size: 15rem;
+      }
+    }
+  }
+}
+.activeHeader {
+  background-color: #fff;
+  transition: 0.4s;
+  .header {
+    &__left {
+      .text {
+        color: $black-cl;
+        transition: 0.4s;
+      }
+    }
+    &__logo {
+      top: 0;
+      font-size: 50px;
+      transition: 0.4s cubic-bezier(0.8, 0.04, 0.34, 0.97);
+      color: $black-cl;
+      opacity: 1;
+    }
+    &__right {
+      span {
+        color: #000;
+      }
+      svg {
+        color: #000;
+      }
+    }
+  }
+}

@@ -1,18 +1,25 @@
-import { lazy } from "react";
-import { path } from "./config/path";
-import Page404 from "./pages/404";
+import { lazy } from 'react';
+import { path } from './config/path';
+import Page404 from './pages/404';
 
-const Home = lazy(() => import('./pages/index'))
+const MainLayout = lazy(() => import('./layouts/MainLayout'));
+const Home = lazy(() => import('./pages/index'));
 
 const routers = [
     {
         path: path.Home,
-        element: <Home />
+        element: <MainLayout />,
+        children: [
+            {
+                path: path.Home,
+                element: <Home />,
+            },
+            {
+                path: '*',
+                element: <Page404 />,
+            },
+        ],
     },
-    {
-        path: '*',
-        element: <Page404 />
-    }
-]
+];
 
-export default routers
+export default routers;

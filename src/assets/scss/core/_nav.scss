@@ -1,0 +1,179 @@
+// css navigator (Menu)
+//menu
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile__fullscreen {
+    visibility: hidden;
+    display: none;
+    position: fixed;
+    height: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1f2423;
+    z-index: 12;
+    transition: all 0.5s;
+    opacity: 0;
+
+    .menu-fullscreen {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+
+            span {
+                display: flex;
+                align-items: center;
+                letter-spacing: 2px;
+                font-size: 15px;
+                font-family: 'MS';
+                text-transform: uppercase;
+                color: #ffffff;
+
+                img {
+                    padding: 0 5px;
+                }
+            }
+        }
+
+        &__main {
+            .menu-fullscreen__left {
+                .logo {
+                    position: relative;
+                    padding-bottom: 30px;
+                    text-align: center;
+
+                    a {
+                        img {
+                            width: 55px;
+                        }
+
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 1px;
+                            left: 0;
+                            bottom: -10px;
+                            display: block;
+                            background: #ffffff;
+                        }
+                    }
+                }
+
+                .close {
+                    cursor: pointer;
+                    max-width: 50px;
+                    margin: 20px auto;
+                    position: relative;
+
+                    .line-mb1 {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 40px;
+                        height: 5px;
+                        transform: rotate(45deg);
+                        border-radius: 10px;
+                        background: #ffffff;
+                    }
+
+                    .line-mb2 {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 40px;
+                        height: 5px;
+                        transform: rotate(-45deg);
+                        border-radius: 10px;
+                        background: #ffffff;
+                    }
+                }
+            }
+
+            .menu-fullscreen__right {
+                ul {
+                    li {
+                        list-style: none;
+                        padding-bottom: 20px;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 20px;
+                            font-family: 'MB';
+                            letter-spacing: 2px;
+                            color: #ffffff;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menuFixed {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    border-bottom: 1px solid #000;
+
+    ul {
+        display: flex;
+        height: 60px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                font-size: var(--font-size-p);
+                font-family: 'MB';
+                text-transform: uppercase;
+                color: #000;
+                transition: all 0.5s;
+
+                &::after {
+                    content: '';
+                    width: 0%;
+                    left: 0;
+                    height: 2px;
+                    bottom: -5px;
+                    position: absolute;
+                    display: block;
+                    background: #000;
+                    transition: all .3s;
+                }
+            }
+
+            &:hover {
+                a {
+                    transition: all .3s;
+
+                    &::after {
+                        width: 100%;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+    }
+}

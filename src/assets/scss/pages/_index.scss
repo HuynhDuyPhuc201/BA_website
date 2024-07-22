@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-size: 55px; // h3
+    --font-size-p: 14px;
+    --font-size-p2: 16px;
+    --font-size-p3: 18px;
+    --font-size-number: 22px;
+    --font-size-text: 21px;
+}
+
+.login,
+.register,
+.english,
+.iconcontact {
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    position: relative;
+    &__content {
+        position: absolute;
+        bottom: 20px;
+        background: red;
+        z-index: 99;
+    }
+    &__img {
+        height: 1000px;
+        background-color: #888;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        @include pc() {
+            height: 1000px;
+        }
+    }
+}
